@@ -1,5 +1,4 @@
-# Anscombe
-Importancia Data Visualization
+
 
 # 📊 Universidad Politécnica Salesiana (UPS)
 
@@ -9,7 +8,7 @@ Importancia Data Visualization
 
 ---
 
-## 🧠 Introducción Teórica: El Cuarteto de Anscombe
+##  Introducción Teórica: El Cuarteto de Anscombe
 
 El **Cuarteto de Anscombe**  es uno de los ejemplos más famosos en estadística para demostrar que los números, por sí solos, pueden ser engañosos. Fue creado en 1973 por el estadístico británico Francis Anscombe, quien buscaba ilustrar la importancia de no quedarse solo con los resúmenes numéricos al analizar datos, sino también de observarlos gráficamente.
 
@@ -41,6 +40,10 @@ El Cuarteto de Anscombe - Por qué visualizar los datos es esencial. (s. f.). h
 
 ## 📁 Estructura del Proyecto
 
-La práctica está organizada en los siguientes directorios:
+El análisis se llevo a cabo utilizando R y R Markdown, permitiendo una integración fluida entre el código, la documentación y la visualización. Se implemento un enfoque basado en el Cuarteto de Anscombe, donde se realizaro las siguientes actividades:
+
+Carga de Datos: Se importo los conjuntos de datos requeridos.
+Análisis Estadístico: Se calcularán estadísticas descriptivas y se generarán visualizaciones gráficas para cada conjunto.
+Aplicación de Regresión Lineal: Se ajustarán modelos de regresión y se visualizarán los resultados.
 
 
