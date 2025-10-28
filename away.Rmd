@@ -1,0 +1,91 @@
+---
+title: "Away"
+author: "Tania Lojano"
+date: "2025-10-26"
+output: html_document
+---
+
+```{r}
+ install.packages("tidyverse")
+install.packages("datasauRus")
+install.packages("dplyr")
+```
+
+```{r}
+library(tidyverse) 
+library(datasauRus)
+library(dplyr)
+```
+
+# Resumen estadístico para cada dataset
+
+```{r}
+datasaurus_dozen %>%
+    group_by(dataset) %>%
+    summarize(
+      mean_x = mean(x), 
+      mean_y = mean(y), 
+      std_dev_x = sd(x), 
+      std_dev_y = sd(y), 
+      corr_x_y = cor(x, y)
+)
+```
+
+# Visualización de los datos con ggplot2
+
+Importamos la libreria ggplot2
+
+```{r}
+library("ggplot2")
+```
+
+# Visualización de dataset
+
+```{r}
+# Visualización de los datos con ggplot2
+ggplot(datasaurus_dozen, aes(x = x, y = y, colour = dataset)) +
+  geom_point() +
+  theme_void() +
+  theme(legend.position = "none") +
+  facet_wrap(~dataset, ncol = 3) +
+  labs(title = "Visualización de los conjuntos de datos", 
+       subtitle = "Cada gráfico muestra la distribución única de 'Datasaurus Dozen'")
+```
+
+# Actividad 
+
+```{r}
+# Filtrar y guardar el data frame del grupo "away"
+away_data <- datasaurus_dozen %>% 
+  filter(dataset == "away")
+
+# Mostrar el data frame
+head(away_data)
+```
+
+# Estadísticas por grupo "away"
+
+```{r}
+# Cálculo de estadísticas resumidas para el grupo "away"
+away_data %>%
+  summarize(
+    mean_x = mean(x),
+    mean_y = mean(y),
+    std_dev_x = sd(x),
+    std_dev_y = sd(y),
+    corr_x_y = cor(x, y)
+  )
+```
+
+# Regresión lineal
+
+```{r}
+# Gráfico del grupo "away" con línea de regresión lineal
+ggplot(away_data, aes(x = x, y = y)) +
+  geom_point(color = "blue") +  # Puntos de datos
+  geom_smooth(method = "lm", color = "red", se = FALSE) +  # Línea de regresión
+  labs(title = "Gráfico del grupo 'away' con regresión lineal",
+       x = "X",
+       y = "Y") +
+  theme_minimal()
+```
